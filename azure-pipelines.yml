@@ -23,6 +23,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - script: echo "This job should run on the self-hosted agent!"
     - task: Docker@2
       displayName: Build an image
       inputs:

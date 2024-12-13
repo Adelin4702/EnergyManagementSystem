@@ -6,8 +6,8 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imageName: 'myimage'  # Adjust the image name as needed
-  registryName: 'containerregistrypetruadelinpricop30643'
+  imageName: 'myimage'
+  registryName: 'containerregistrypetruadelinpricop30643.azurecr.io'
 
 pool:
   name: 'local'  # Self-hosted agent pool
@@ -23,12 +23,14 @@ stages:
     steps:
     - script: echo "This job should run on the self-hosted agent!"
     
-    - task: Docker@2
-      displayName: 'Login to Azure Container Registry'
-      inputs:
-        command: 'login'
-        containerRegistry: 'containerregistrypetruadelinpricop30643'
-
+    # Step to log in to Azure using CLI
+    - script: |
+        echo "Logging in to Azure..."
+        az login  # Authenticate with Azure CLI
+        az acr login --name containerregistrypetruadelinpricop30643  # Authenticate to Azure Container Registry
+      displayName: 'Login to Azure and ACR'
+      
+    # Step to build Docker image
     - task: Docker@2
       displayName: 'Build Docker Image'
       inputs:
@@ -36,12 +38,13 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/chatMicroservice/Dockerfile'
         tags: |
           $(registryName)/$(imageName):$(tag)
-    
+
+    # Step to push Docker image
     - task: Docker@2
       displayName: 'Push Docker Image'
       inputs:
         command: 'push'
-        containerRegistry: 'containerregistrypetruadelinpricop30643'
+        containerRegistry: 'containerregistrypetruadelinpricop30643.azurecr.io'
         repository: '$(registryName)/$(imageName)'
         tags: |
           $(tag)

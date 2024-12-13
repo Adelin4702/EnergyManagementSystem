@@ -1,0 +1,143 @@
+/* Container for the entire login form */
+:local(.login-container) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    padding: 0 20px;
+    overflow: hidden; /* Ensure no content overflow */
+  }
+  
+  /* The form itself */
+  :local(.login-form) {
+    width: 100%;
+    max-width: 450px; /* Maximum width for the form */
+    background-color: white;
+    padding: 40px 40px 30px; /* Padding for the form */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Centered text inside the form */
+  }
+  
+  /* Title of the form */
+  :local(.login-form h3) {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Input fields styling */
+  :local(.login-input) {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding in the total width/height */
+  }
+  
+  :local(.login-input:focus) {
+    border-color: #2575fc; /* Border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0px 0px 8px rgba(37, 117, 252, 0.6); /* Light blue glow */
+  }
+  
+  /* Error message styling */
+  :local(.error-message) {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  /* Submit Button styling */
+  :local(.login-button) {
+    width: 100%;
+    padding: 14px;
+    background-color: #2575fc;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  :local(.login-button:hover) {
+    background-color: #1d62c2; /* Darker blue when hovering */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  :local(.login-button:active) {
+    background-color: #145ca8; /* Even darker blue when clicked */
+    transform: scale(1); /* Reset scaling */
+  }
+  
+  /* Link (e.g. to open the register modal) */
+  :local(.register-link) {
+    font-size: 14px;
+    color: #2575fc;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  :local(.register-link:hover) {
+    text-decoration: underline;
+  }
+  
+  /* Modal Styling (for Registration) */
+  :local(.register-modal) {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  :local(.modal-header) {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 15px;
+  }
+  
+  :local(.modal-body) {
+    padding: 25px;
+  }
+
+
+  
+  /* Responsive design for mobile devices */
+  @media (max-width: 768px) {
+    :local(.login-form) {
+      padding: 30px 20px; /* Adjust padding for smaller screens */
+    }
+  
+    :local(.login-button) {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    :local(.login-input) {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    :local(.login-form h3) {
+      font-size: 24px; /* Adjust title font size for smaller screens */
+    }
+  }
+  

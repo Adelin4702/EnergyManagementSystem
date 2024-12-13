@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41bb6d99.css",
+    "main.js": "/static/js/main.43376be3.js",
+    "static/media/Energy-management.jpg": "/static/media/Energy-management.76c6a85934c9af98c729.jpg",
+    "static/media/th.jpeg": "/static/media/th.2cbba92e370feda5a5a2.jpeg",
+    "static/media/bell-icon.png": "/static/media/bell-icon.a4eabe23bd673d05e23c.png",
+    "static/media/chat-icon.png": "/static/media/chat-icon.e6fde268bf12107135fb.png",
+    "static/media/icon.png": "/static/media/icon.0c0a955a7e52a9eeb678.png",
+    "static/media/user-icon.png": "/static/media/user-icon.9312df516d5f542da540.png",
+    "index.html": "/index.html",
+    "main.41bb6d99.css.map": "/static/css/main.41bb6d99.css.map",
+    "main.43376be3.js.map": "/static/js/main.43376be3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41bb6d99.css",
+    "static/js/main.43376be3.js"
+  ]
+}

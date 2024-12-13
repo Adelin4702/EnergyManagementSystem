@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c195425e-1c9d-4d0a-97b9-8c9a842eac9c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2nHKOz8Xzh9v72MlLdq0zBLrgM2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile builder.executor": "Run",
+    "Maven.ds-2020 [clean].executor": "Run",
+    "Maven.ds-2020 [install].executor": "Run",
+    "Maven.personMicroservice [clean].executor": "Run",
+    "Maven.personMicroservice [install].executor": "Run",
+    "Maven.personMicroservice [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Ds2020Application.executor": "Run",
+    "Spring Boot.Ds2024Application_PersonMicroservice.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/prico/OneDrive/Desktop/Faculta/SD/Assignment_3/personMicroservice",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ro.tuc.ds2020.controllers.handlers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Ds2024Application_PersonMicroservice">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-demo" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ds2024Application_PersonMicroservice" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="personMicroservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ro.tuc.ds2020.Ds2024Application_PersonMicroservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile builder" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="maven3.6.3-jdk-11_builder" />
+          <option name="buildCliOptions" value="--target builder" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile builder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c195425e-1c9d-4d0a-97b9-8c9a842eac9c" name="Changes" comment="" />
+      <created>1728624533879</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728624533879</updated>
+      <workItem from="1728624535256" duration="3612000" />
+      <workItem from="1728629274016" duration="131000" />
+      <workItem from="1729081545950" duration="234000" />
+      <workItem from="1729083813230" duration="5344000" />
+      <workItem from="1729176130903" duration="10120000" />
+      <workItem from="1729416410772" duration="35693000" />
+      <workItem from="1729598971381" duration="610000" />
+      <workItem from="1729627844812" duration="21607000" />
+      <workItem from="1729701980049" duration="5195000" />
+      <workItem from="1729767736356" duration="284000" />
+      <workItem from="1729832370827" duration="2119000" />
+      <workItem from="1729835739917" duration="4646000" />
+      <workItem from="1730104805795" duration="4715000" />
+      <workItem from="1730239840859" duration="6148000" />
+      <workItem from="1730249766283" duration="25000" />
+      <workItem from="1730251123137" duration="2044000" />
+      <workItem from="1730282502212" duration="10514000" />
+      <workItem from="1730308585453" duration="73000" />
+      <workItem from="1730367043022" duration="1635000" />
+      <workItem from="1730906003853" duration="713000" />
+      <workItem from="1731047375296" duration="6602000" />
+      <workItem from="1731314371432" duration="878000" />
+      <workItem from="1731319797107" duration="340000" />
+      <workItem from="1731347528627" duration="2787000" />
+      <workItem from="1731492007565" duration="2600000" />
+      <workItem from="1731651376521" duration="23017000" />
+      <workItem from="1731925822123" duration="584000" />
+      <workItem from="1732007248429" duration="3634000" />
+      <workItem from="1733468130034" duration="6382000" />
+    </task>
+    <task id="LOCAL-00001" summary="from intelij">
+      <option name="closed" value="true" />
+      <created>1730367269326</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730367269326</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="from intelij" />
+    <option name="LAST_COMMIT_MESSAGE" value="from intelij" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

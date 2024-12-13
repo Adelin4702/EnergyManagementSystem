@@ -1,0 +1,191 @@
+version: "3.3"
+
+services:
+  traefik:
+    image: "traefik:v2.9"
+    command:
+      - "--api.insecure=true" # Dashboard
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+      - "--accesslog=true"  # Enable access logs
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Dashboard
+    depends_on:
+      - postgres-city-db
+      - postgres-device-db
+      - postgres-monitor-db
+      - postgres-chat-db
+      - backend-person
+      - backend-device
+      - backend-monitor
+      - backend-chat
+      - frontend
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    labels:
+      # Traefik dashboard
+      - "traefik.enable=true"
+    networks:
+      - sd_network
+
+  postgres-city-db:
+    image: postgres:latest
+    container_name: postgres-city-db
+    environment:
+      POSTGRES_DB: city-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - "./volumes/city-db:/var/lib/postgresql/data"
+    networks:
+      - sd_network
+
+  postgres-device-db:
+    image: postgres:latest
+    container_name: postgres-device-db
+    environment:
+      POSTGRES_DB: device-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - "./volumes/device-db:/var/lib/postgresql/data"
+    networks:
+      - sd_network
+      
+  postgres-monitor-db:
+    image: postgres:latest
+    container_name: postgres-monitor-db
+    environment:
+      POSTGRES_DB: monitor-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - "./volumes/monitor-db:/var/lib/postgresql/data"
+    networks:
+      - sd_network
+      
+  postgres-chat-db:
+    image: postgres:latest
+    container_name: postgres-chat-db
+    environment:
+      POSTGRES_DB: chat-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - "./volumes/chat-db:/var/lib/postgresql/data"
+    networks:
+      - sd_network
+
+  backend-person:
+    build:
+      context: ./personMicroservice
+      dockerfile: Dockerfile
+    #container_name: backend-person
+    environment:
+      DB_IP: postgres-city-db
+    deploy:
+      replicas: 1
+    depends_on:
+      - postgres-city-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend-person.rule=Host(`localhost`) && PathPrefix(`/api-user`)"
+      - "traefik.http.services.backend-person.loadbalancer.server.port=8083"
+      - "traefik.http.routers.backend-person.entrypoints=web"
+    networks:
+      - sd_network
+      
+  backend-device:
+    build:
+      context: ./deviceMicroservice
+      dockerfile: Dockerfile
+    #container_name: backend-device
+    environment:
+      RABBIT_HOST: rabbitmq
+      DB_IP: postgres-device-db
+    deploy:
+      replicas: 1
+    depends_on:
+      - postgres-device-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend-device.rule=Host(`localhost`) && PathPrefix(`/api-device`)"
+      - "traefik.http.services.backend-device.loadbalancer.server.port=8081"
+      - "traefik.http.routers.backend-device.entrypoints=web"
+    networks:
+      - sd_network
+      
+  backend-monitor:
+    build:
+      context: ./monitoringMicroservice
+      dockerfile: Dockerfile
+    #container_name: backend-monitor
+    environment:
+      RABBIT_HOST: rabbitmq
+      DB_IP: postgres-monitor-db
+    deploy:
+      replicas: 1
+    depends_on:
+      - postgres-monitor-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend-monitor.rule=Host(`localhost`) && PathPrefix(`/api-monitor`)"
+      - "traefik.http.services.backend-monitor.loadbalancer.server.port=8082"
+      - "traefik.http.routers.backend-monitor.entrypoints=web"
+    networks:
+      - sd_network
+      
+  backend-chat:
+    build:
+      context: ./chatMicroservice
+      dockerfile: Dockerfile
+    #container_name: backend-person
+    environment:
+      DB_IP: postgres-chat-db
+    deploy:
+      replicas: 1
+    depends_on:
+      - postgres-chat-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend-chat.rule=Host(`localhost`) && PathPrefix(`/api-chat`)"
+      - "traefik.http.services.backend-chat.loadbalancer.server.port=8084"
+      - "traefik.http.routers.backend-chat.entrypoints=web"
+    networks:
+      - sd_network
+
+  frontend:
+    build:
+      context: ./react-demo
+      dockerfile: Dockerfile
+    container_name: frontend
+    environment:
+      - BACKEND_URL=backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`localhost`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.routers.frontend.entrypoints=web"
+
+    networks:
+      - sd_network
+
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rabbitmq.rule=Host(`localhost`) && PathPrefix(`/rabbitmq`)"
+      - "traefik.http.services.rabbitmq.loadbalancer.server.port=15672"
+    networks:
+      - sd_network
+      
+      
+networks:
+  sd_network:
+    driver: bridge

@@ -1,0 +1,91 @@
+
+:local(.pageContainer) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  :local(.header) {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  :local(.sideBySideContainer) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 95%;
+  }
+  
+  :local(.leftPanel) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  :local(.deviceSelector) {
+    margin-bottom: 20px;
+  }
+  
+  :local(.deviceLabel) {
+    margin-right: 10px;
+  }
+  
+  :local(.select) {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  :local(.datePicker) {
+    margin-bottom: 20px;
+  }
+  
+  :local(.button) {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    width: 40%;
+  }
+  
+  :local(.button:disabled) {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  :local(.notifications) {
+    margin-top: 20px;
+  }
+  
+  :local(.notification) {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  :local(.noNotifications) {
+    color: #999;
+  }
+  
+  :local(.rightPanel) {
+    flex: 2.4;
+    padding: 50px;
+    padding-top: 0px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
